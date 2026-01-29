@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Registration | AI Proctoring</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <h1>AI Based Online Exam Proctoring System</h1>
+</header>
+
+<div class="registration-container">
+    <h2>Teacher Registration</h2>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label class="form-label">Full Name</label>
+        <input type="text" name="full_name" class="form-input" required>
+
+        <label class="form-label">Employee ID</label>
+        <input type="text" name="employee_id" class="form-input" required>
+
+        <label class="form-label">Age</label>
+        <input type="number" name="age" min="18" class="form-input" required>
+
+        <label class="form-label">Address</label>
+        <textarea name="address" class="form-input form-textarea" required></textarea>
+
+        <label class="form-label">Department</label>
+        <input type="text" name="department" class="form-input" required>
+
+        <label class="form-label">Phone Number</label>
+        <input type="tel" name="phone_no" pattern="[0-9]{10}" placeholder="10-digit number" class="form-input" required>
+
+        <label class="form-label">Email ID</label>
+        <input type="email" name="email" class="form-input" required>
+
+        <label class="form-label">Username</label>
+        <input type="text" name="username" class="form-input" required>
+
+        <label class="form-label">Password</label>
+        <input type="password" name="password" class="form-input" required>
+
+        <button type="submit" class="btn btn-success">Register</button>
+    </form>
+</div>
+
+<footer class="footer-text mt-5">
+    © 2026 AI Exam Proctoring System | Teacher Module
+</footer>
+
+</body>
+</html>

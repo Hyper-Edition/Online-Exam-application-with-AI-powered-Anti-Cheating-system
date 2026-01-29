@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Monitoring - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <h1><i class="fas fa-desktop"></i> Live Monitor</h1>
+    <p class="text-muted">Teacher Control Panel</p>
+  </div>
+  
+  <nav class="nav-links">
+    <a href="/teacher-dashboard/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="#"><i class="fas fa-plus-circle"></i> Create Exam</a>
+    <a href="/monitor/" class="active"><i class="fas fa-desktop"></i> Live Monitor</a>
+    <a href="/cheating-report/"><i class="fas fa-exclamation-triangle"></i> Violations</a>
+    <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+    <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+  
+  <div class="monitor-controls">
+    <h3>Controls</h3>
+    <button class="btn btn-primary btn-block">
+      <i class="fas fa-play"></i> Start Monitoring
+    </button>
+    <button class="btn btn-warning btn-block">
+      <i class="fas fa-pause"></i> Pause All
+    </button>
+    <button class="btn btn-success btn-block">
+      <i class="fas fa-download"></i> Export Logs
+    </button>
+  </div>
+</aside>
+
+<main class="main-content">
+  <div class="content-header">
+    <h2><i class="fas fa-desktop"></i> Live Examination Monitoring</h2>
+    <div class="header-stats">
+      <span class="stat-badge success"><i class="fas fa-user"></i> 24 Students Active</span>
+      <span class="stat-badge warning"><i class="fas fa-exclamation-triangle"></i> 3 Warnings</span>
+      <span class="stat-badge error"><i class="fas fa-times-circle"></i> 1 Violation</span>
+    </div>
+  </div>
+
+  <div class="monitoring-grid">
+    <div class="monitor-card">
+      <div class="student-header">
+        <h4>John Smith</h4>
+        <span class="monitor-status status-normal">Normal</span>
+      </div>
+      <div class="video-placeholder">
+        <div class="video-feed">
+          <i class="fas fa-user fa-4x"></i>
+          <p>Live Video Feed</p>
+        </div>
+      </div>
+      <div class="student-info">
+        <p><strong>Exam:</strong> Artificial Intelligence</p>
+        <p><strong>Progress:</strong> Question 3/5</p>
+        <p><strong>Time Left:</strong> 32:15</p>
+      </div>
+      <div class="monitor-metrics">
+        <div class="metric">
+          <span class="metric-label">Face Detection:</span>
+          <span class="metric-value success">98%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Gaze Accuracy:</span>
+          <span class="metric-value success">92%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Audio Level:</span>
+          <span class="metric-value success">Normal</span>
+        </div>
+      </div>
+      <div class="monitor-actions">
+        <button class="btn btn-primary btn-sm">
+          <i class="fas fa-comment"></i> Message
+        </button>
+        <button class="btn btn-warning btn-sm">
+          <i class="fas fa-exclamation"></i> Warn
+        </button>
+      </div>
+    </div>
+
+    <div class="monitor-card">
+      <div class="student-header">
+        <h4>Emma Johnson</h4>
+        <span class="monitor-status status-warning">Warning</span>
+      </div>
+      <div class="video-placeholder">
+        <div class="video-feed warning">
+          <i class="fas fa-exclamation-triangle fa-4x"></i>
+          <p>Multiple Faces Detected</p>
+        </div>
+      </div>
+      <div class="student-info">
+        <p><strong>Exam:</strong> Data Structures</p>
+        <p><strong>Progress:</strong> Question 2/5</p>
+        <p><strong>Time Left:</strong> 45:30</p>
+      </div>
+      <div class="monitor-metrics">
+        <div class="metric">
+          <span class="metric-label">Face Detection:</span>
+          <span class="metric-value warning">75%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Object Detection:</span>
+          <span class="metric-value warning">Mobile Phone</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Browser Focus:</span>
+          <span class="metric-value success">Normal</span>
+        </div>
+      </div>
+      <div class="monitor-actions">
+        <button class="btn btn-warning btn-sm">
+          <i class="fas fa-bell"></i> Send Alert
+        </button>
+        <button class="btn btn-primary btn-sm">
+          <i class="fas fa-eye"></i> Focus View
+        </button>
+      </div>
+    </div>
+
+    <div class="monitor-card">
+      <div class="student-header">
+        <h4>Michael Brown</h4>
+        <span class="monitor-status status-error">Violation</span>
+      </div>
+      <div class="video-placeholder">
+        <div class="video-feed error">
+          <i class="fas fa-times-circle fa-4x"></i>
+          <p>Face Not Detected</p>
+        </div>
+      </div>
+      <div class="student-info">
+        <p><strong>Exam:</strong> Database Systems</p>
+        <p><strong>Progress:</strong> Question 4/5</p>
+        <p><strong>Time Left:</strong> 15:45</p>
+      </div>
+      <div class="monitor-metrics">
+        <div class="metric">
+          <span class="metric-label">Face Detection:</span>
+          <span class="metric-value error">0%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Last Seen:</span>
+          <span class="metric-value error">2 min ago</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Status:</span>
+          <span class="metric-value error">Disconnected</span>
+        </div>
+      </div>
+      <div class="monitor-actions">
+        <button class="btn btn-error btn-sm">
+          <i class="fas fa-ban"></i> Disqualify
+        </button>
+        <button class="btn btn-primary btn-sm">
+          <i class="fas fa-phone"></i> Call Student
+        </button>
+      </div>
+    </div>
+
+    <div class="monitor-card">
+      <div class="student-header">
+        <h4>Sarah Williams</h4>
+        <span class="monitor-status status-normal">Normal</span>
+      </div>
+      <div class="video-placeholder">
+        <div class="video-feed">
+          <i class="fas fa-user fa-4x"></i>
+          <p>Live Video Feed</p>
+        </div>
+      </div>
+      <div class="student-info">
+        <p><strong>Exam:</strong> Machine Learning</p>
+        <p><strong>Progress:</strong> Question 5/5</p>
+        <p><strong>Time Left:</strong> 08:15</p>
+      </div>
+      <div class="monitor-metrics">
+        <div class="metric">
+          <span class="metric-label">Face Detection:</span>
+          <span class="metric-value success">99%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Gaze Accuracy:</span>
+          <span class="metric-value success">94%</span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">Activity:</span>
+          <span class="metric-value success">Typing</span>
+        </div>
+      </div>
+      <div class="monitor-actions">
+        <button class="btn btn-primary btn-sm">
+          <i class="fas fa-thumbs-up"></i> Good
+        </button>
+        <button class="btn btn-success btn-sm">
+          <i class="fas fa-check"></i> Mark Complete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Monitoring Statistics</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">24</div>
+        <div class="stat-label">Total Students</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">22</div>
+        <div class="stat-label">Normal Status</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Warnings</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Violations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">98.7%</div>
+        <div class="stat-label">System Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">0.8s</div>
+        <div class="stat-label">Avg Lag Time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Alerts</h3>
+    <table>
+      <tr>
+        <th>Time</th>
+        <th>Student</th>
+        <th>Alert Type</th>
+        <th>Severity</th>
+        <th>Action Taken</th>
+      </tr>
+      <tr>
+        <td>10:25 AM</td>
+        <td>Emma Johnson</td>
+        <td>Multiple Faces Detected</td>
+        <td><span class="warning">Medium</span></td>
+        <td>Warning Sent</td>
+      </tr>
+      <tr>
+        <td>10:15 AM</td>
+        <td>Michael Brown</td>
+        <td>Face Not Detected</td>
+        <td><span class="error">High</span></td>
+        <td>Under Review</td>
+      </tr>
+      <tr>
+        <td>09:45 AM</td>
+        <td>David Miller</td>
+        <td>Gaze Deviation</td>
+        <td><span class="warning">Low</span></td>
+        <td>Monitoring</td>
+      </tr>
+      <tr>
+        <td>09:30 AM</td>
+        <td>John Smith</td>
+        <td>Browser Tab Switch</td>
+        <td><span class="warning">Medium</span></td>
+        <td>Alert Sent</td>
+      </tr>
+    </table>
+  </div>
+</main>
+
+</body>
+</html>

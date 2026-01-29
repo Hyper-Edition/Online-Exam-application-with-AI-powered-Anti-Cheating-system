@@ -1,0 +1,220 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+
+<aside class="sidebar">
+  <div class="student-profile">
+    <div class="profile-avatar">
+      <i class="fas fa-user-circle fa-3x"></i>
+    </div>
+    <div class="profile-info">
+      <h3>John Doe</h3>
+      <p class="text-muted">Computer Engineering</p>
+      <p class="student-id">S20260045</p>
+    </div>
+  </div>
+  
+  <nav class="nav-links">
+    <a class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="/exam-list/"><i class="fas fa-file-alt"></i> Available Exams</a>
+    <a href="#"><i class="fas fa-calendar"></i> Exam Schedule</a>
+    <a href="/results/"><i class="fas fa-chart-line"></i> Results</a>
+    <a href="#"><i class="fas fa-user-cog"></i> Profile Settings</a>
+    <a href="#"><i class="fas fa-question-circle"></i> Help & Support</a>
+    <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+  
+  <div class="sidebar-footer">
+    <div class="system-status">
+      <p><strong>Proctoring Status:</strong> <span class="success">● Ready</span></p>
+      <p><strong>Webcam:</strong> <span class="success">Connected</span></p>
+      <p><strong>Microphone:</strong> <span class="success">Connected</span></p>
+    </div>
+  </div>
+</aside>
+
+<main class="main-content">
+  <div class="content-header">
+    <h2><i class="fas fa-tachometer-alt"></i> Student Dashboard</h2>
+    <p>Welcome back, John! Here's your academic overview.</p>
+  </div>
+
+  <div class="cards">
+    <div class="dashboard-card">
+      <div class="icon">📝</div>
+      <h3>Active Exams</h3>
+      <p>2</p>
+      <p class="text-muted">Available now</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">⏰</div>
+      <h3>Upcoming Exams</h3>
+      <p>3</p>
+      <p class="text-muted">Next 7 days</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">🏆</div>
+      <h3>Average Score</h3>
+      <p>81%</p>
+      <p class="text-muted">Current semester</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">📊</div>
+      <h3>Class Rank</h3>
+      <p>15</p>
+      <p class="text-muted">Out of 120 students</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Next Examination</h3>
+    <div class="exam-alert">
+      <div class="exam-alert-content">
+        <div class="exam-alert-icon">
+          <i class="fas fa-clock fa-2x warning"></i>
+        </div>
+        <div class="exam-alert-info">
+          <h4>Artificial Intelligence - Midterm Exam</h4>
+          <p><i class="fas fa-calendar"></i> <strong>Date:</strong> Today, March 23, 2026</p>
+          <p><i class="fas fa-clock"></i> <strong>Time:</strong> 10:00 AM - 11:00 AM (Starting in 45 minutes)</p>
+          <p><i class="fas fa-hourglass-half"></i> <strong>Duration:</strong> 60 Minutes | <strong>Marks:</strong> 100</p>
+          <p><i class="fas fa-chalkboard-teacher"></i> <strong>Instructor:</strong> Dr. Sarah Johnson</p>
+        </div>
+        <div class="exam-alert-actions">
+          <a href="/exam/" class="btn btn-success">
+            <i class="fas fa-play-circle"></i> Start Exam Now
+          </a>
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-info-circle"></i> Instructions
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Activities</h3>
+    <div class="activity-timeline">
+      <div class="activity-item success">
+        <div class="activity-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="activity-content">
+          <h5>Exam Completed</h5>
+          <p>Database Systems - Scored 85%</p>
+          <span class="activity-time">March 18, 2026 | 2:30 PM</span>
+        </div>
+      </div>
+      
+      <div class="activity-item warning">
+        <div class="activity-icon">
+          <i class="fas fa-exclamation-triangle"></i>
+        </div>
+        <div class="activity-content">
+          <h5>Proctoring Alert</h5>
+          <p>Minor gaze deviation detected during exam</p>
+          <span class="activity-time">March 15, 2026 | 11:15 AM</span>
+        </div>
+      </div>
+      
+      <div class="activity-item info">
+        <div class="activity-icon">
+          <i class="fas fa-bell"></i>
+        </div>
+        <div class="activity-content">
+          <h5>New Exam Scheduled</h5>
+          <p>Data Structures exam on March 25, 2026</p>
+          <span class="activity-time">March 14, 2026 | 9:30 AM</span>
+        </div>
+      </div>
+      
+      <div class="activity-item success">
+        <div class="activity-icon">
+          <i class="fas fa-download"></i>
+        </div>
+        <div class="activity-content">
+          <h5>Study Material Updated</h5>
+          <p>AI course materials have been updated</p>
+          <span class="activity-time">March 12, 2026 | 4:45 PM</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Upcoming Schedule</h3>
+    <table>
+      <tr>
+        <th>Exam</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Duration</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>Artificial Intelligence</td>
+        <td>Today</td>
+        <td>10:00 AM</td>
+        <td>60 min</td>
+        <td><span class="warning">Starting Soon</span></td>
+        <td><a href="/exam/" class="btn btn-sm btn-success">Start</a></td>
+      </tr>
+      <tr>
+        <td>Data Structures</td>
+        <td>Mar 25, 2026</td>
+        <td>2:00 PM</td>
+        <td>90 min</td>
+        <td><span class="info">Scheduled</span></td>
+        <td><a href="#" class="btn btn-sm btn-primary">Prepare</a></td>
+      </tr>
+      <tr>
+        <td>Machine Learning</td>
+        <td>Mar 28, 2026</td>
+        <td>11:00 AM</td>
+        <td>75 min</td>
+        <td><span class="info">Scheduled</span></td>
+        <td><a href="#" class="btn btn-sm btn-primary">Syllabus</a></td>
+      </tr>
+      <tr>
+        <td>Computer Networks</td>
+        <td>Apr 02, 2026</td>
+        <td>3:00 PM</td>
+        <td>80 min</td>
+        <td><span class="info">Scheduled</span></td>
+        <td><a href="#" class="btn btn-sm btn-primary">Materials</a></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Quick Actions</h3>
+    <div class="home-buttons">
+      <a href="/exam_list/" class="btn btn-primary">
+        <i class="fas fa-search"></i> Browse Exams
+      </a>
+      <a href="/results/  " class="btn btn-success">
+        <i class="fas fa-chart-bar"></i> View Results
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-book"></i> Study Materials
+      </a>
+      <a href="#" class="btn btn-warning">
+        <i class="fas fa-cog"></i> Settings
+      </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

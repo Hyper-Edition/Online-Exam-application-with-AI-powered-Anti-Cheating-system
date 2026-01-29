@@ -1,0 +1,206 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Available Exams - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>AI Exam Proctoring System</h1>
+  <p>Select and Start Your Examination</p>
+  <nav>
+    <a href="/student-dashboard/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="/exam-list/" class="active"><i class="fas fa-list-alt"></i> Exams</a>
+    <a href="/results/"><i class="fas fa-chart-line"></i> Results</a>
+    <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Available Examinations</h2>
+  
+  <div class="card">
+    <div class="exam-filter">
+      <h3>Filter Exams</h3>
+      <div class="filter-options">
+        <select class="form-input" style="width: 200px; display: inline-block; margin-right: 15px;">
+          <option>All Subjects</option>
+          <option>Artificial Intelligence</option>
+          <option>Data Structures</option>
+          <option>Database Systems</option>
+          <option>Computer Networks</option>
+        </select>
+        <select class="form-input" style="width: 200px; display: inline-block;">
+          <option>All Status</option>
+          <option>Available</option>
+          <option>Upcoming</option>
+          <option>Completed</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="card exam-card">
+    <div class="exam-header-info">
+      <div class="exam-badge ongoing">Ongoing</div>
+      <h3>Artificial Intelligence - Midterm Examination</h3>
+      <p class="exam-description">
+        This exam covers fundamental concepts of AI including search algorithms, 
+        knowledge representation, and machine learning basics.
+      </p>
+    </div>
+    
+    <div class="exam-details">
+      <div class="detail-item">
+        <i class="fas fa-clock"></i>
+        <span><strong>Duration:</strong> 60 Minutes</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-calendar"></i>
+        <span><strong>Date:</strong> March 23, 2026</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-chart-line"></i>
+        <span><strong>Total Marks:</strong> 100</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-question-circle"></i>
+        <span><strong>Questions:</strong> 5 (Descriptive)</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-user-graduate"></i>
+        <span><strong>Instructor:</strong> Dr. Sarah Johnson</span>
+      </div>
+    </div>
+    
+    <div class="exam-requirements">
+      <h4><i class="fas fa-exclamation-circle"></i> Requirements:</h4>
+      <ul>
+        <li>Stable internet connection</li>
+        <li>Webcam and microphone</li>
+        <li>Quiet, well-lit environment</li>
+        <li>No additional materials allowed</li>
+      </ul>
+    </div>
+    
+    <div class="exam-actions">
+      <a href="/exam/" class="btn btn-success btn-large">
+        <i class="fas fa-play-circle"></i> Start Exam Now
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-info-circle"></i> View Instructions
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-download"></i> Download Syllabus
+      </a>
+    </div>
+  </div>
+
+  <div class="card exam-card">
+    <div class="exam-header-info">
+      <div class="exam-badge upcoming">Upcoming</div>
+      <h3>Data Structures & Algorithms</h3>
+      <p class="exam-description">
+        Comprehensive examination covering arrays, linked lists, trees, graphs, 
+        and algorithm analysis.
+      </p>
+    </div>
+    
+    <div class="exam-details">
+      <div class="detail-item">
+        <i class="fas fa-clock"></i>
+        <span><strong>Duration:</strong> 90 Minutes</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-calendar"></i>
+        <span><strong>Date:</strong> March 25, 2026 (Starts in 2 days)</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-chart-line"></i>
+        <span><strong>Total Marks:</strong> 150</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-question-circle"></i>
+        <span><strong>Questions:</strong> 30 (MCQ + Coding)</span>
+      </div>
+    </div>
+    
+    <div class="exam-actions">
+      <button class="btn btn-primary" disabled>
+        <i class="fas fa-clock"></i> Starts March 25
+      </button>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-book"></i> Prepare Now
+      </a>
+    </div>
+  </div>
+
+  <div class="card exam-card">
+    <div class="exam-header-info">
+      <div class="exam-badge completed">Completed</div>
+      <h3>Database Management Systems</h3>
+      <p class="exam-description">
+        Exam covering SQL, normalization, transactions, and database design principles.
+      </p>
+    </div>
+    
+    <div class="exam-details">
+      <div class="detail-item">
+        <i class="fas fa-check-circle success"></i>
+        <span><strong>Status:</strong> Completed on March 18, 2026</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-chart-line"></i>
+        <span><strong>Your Score:</strong> 85/100</span>
+      </div>
+      <div class="detail-item">
+        <i class="fas fa-award"></i>
+        <span><strong>Grade:</strong> A</span>
+      </div>
+    </div>
+    
+    <div class="exam-actions">
+      <a href="/results/" class="btn btn-primary">
+        <i class="fas fa-chart-bar"></i> View Detailed Results
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-file-alt"></i> View Answer Key
+      </a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Exam Statistics</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Total Exams</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">1</div>
+        <div class="stat-label">Active Now</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Upcoming</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2</div>
+        <div class="stat-label">Completed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 AI Based Online Exam Proctoring System</p>
+  <p>Student Portal - Examination Module</p>
+  <p>Need help? Contact exam support: support@aiexamproctor.edu</p>
+</footer>
+
+</body>
+</html>

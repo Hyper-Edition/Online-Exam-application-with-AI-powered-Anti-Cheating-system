@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cheating Report - AI Proctoring System</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>AI Exam Proctoring System</h1>
+  <p>Comprehensive Cheating Detection Reports</p>
+  <nav>
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/admin-dashboard/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="/monitor/"><i class="fas fa-desktop"></i> Live Monitor</a>
+    <a href="/cheating-report/" class="active"><i class="fas fa-exclamation-triangle"></i> Reports</a>
+    <a href="/admin-login/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Cheating Detection Reports</h2>
+  
+  <div class="card">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">156</div>
+        <div class="stat-label">Total Violations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">24</div>
+        <div class="stat-label">Today's Violations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">92%</div>
+        <div class="stat-label">Detection Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">8%</div>
+        <div class="stat-label">False Positives</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Violations</h3>
+    <div class="table-responsive">
+      <table>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+          <th>Exam</th>
+          <th>Violation Type</th>
+          <th>Confidence</th>
+          <th>Time</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+        <tr>
+          <td>S20260045</td>
+          <td>John Smith</td>
+          <td>Artificial Intelligence</td>
+          <td><span class="warning">Multiple Faces Detected</span></td>
+          <td><span class="error">92%</span></td>
+          <td>Today, 10:25 AM</td>
+          <td><span class="warning">Under Review</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Review</button>
+            <button class="btn btn-success btn-sm">Dismiss</button>
+          </td>
+        </tr>
+        <tr>
+          <td>S20260078</td>
+          <td>Emma Johnson</td>
+          <td>Data Structures</td>
+          <td><span class="warning">Prohibited Object (Mobile)</span></td>
+          <td><span class="error">87%</span></td>
+          <td>Today, 09:45 AM</td>
+          <td><span class="success">Confirmed</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">View Evidence</button>
+          </td>
+        </tr>
+        <tr>
+          <td>S20260123</td>
+          <td>Michael Brown</td>
+          <td>Database Systems</td>
+          <td><span class="warning">Face Not Detected</span></td>
+          <td><span class="error">95%</span></td>
+          <td>Yesterday, 2:30 PM</td>
+          <td><span class="warning">Warning Sent</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Resolve</button>
+          </td>
+        </tr>
+        <tr>
+          <td>S20260092</td>
+          <td>Sarah Williams</td>
+          <td>Machine Learning</td>
+          <td><span class="warning">Gaze Deviation</span></td>
+          <td><span class="error">78%</span></td>
+          <td>Yesterday, 11:15 AM</td>
+          <td><span class="success">Dismissed</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">Details</button>
+          </td>
+        </tr>
+        <tr>
+          <td>S20260145</td>
+          <td>David Miller</td>
+          <td>Computer Networks</td>
+          <td><span class="warning">Browser Tab Switching</span></td>
+          <td><span class="error">85%</span></td>
+          <td>Mar 15, 3:45 PM</td>
+          <td><span class="success">Confirmed</span></td>
+          <td>
+            <button class="btn btn-primary btn-sm">View Logs</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Violation Analysis</h3>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h4>Multiple Faces</h4>
+        <p>45% of violations</p>
+        <p>Most common violation type</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📱</div>
+        <h4>Mobile Usage</h4>
+        <p>28% of violations</p>
+        <p>Second most common</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👁️</div>
+        <h4>Gaze Deviation</h4>
+        <p>15% of violations</p>
+        <p>Harder to detect accurately</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💻</div>
+        <h4>Browser Activity</h4>
+        <p>12% of violations</p>
+        <p>Tab switching & copy-paste</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Report Actions</h3>
+    <div class="home-buttons">
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-download"></i> Export Report
+      </a>
+      <a href="#" class="btn btn-success">
+        <i class="fas fa-chart-bar"></i> Generate Analytics
+      </a>
+      <a href="/admin-dashboard/" class="btn btn-warning">
+        <i class="fas fa-arrow-left"></i> Back to Dashboard
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-print"></i> Print Report
+      </a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 AI Based Online Exam Proctoring System</p>
+  <p>Cheating Detection Module | Version 2.1.4</p>
+  <p>Report Generated: Today at 11:30 AM</p>
+</footer>
+
+</body>
+</html>

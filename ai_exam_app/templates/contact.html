@@ -1,0 +1,532 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AI Based Online Exam Proctoring System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-header h1 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-info-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+        
+        .contact-info-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .contact-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .contact-icon {
+            background: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-details h4 {
+            margin: 0 0 0.5rem 0;
+            color: #2c3e50;
+        }
+        
+        .contact-details p {
+            margin: 0;
+            color: #7f8c8d;
+            line-height: 1.6;
+        }
+        
+        .contact-details a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: #2980b9;
+            text-decoration: underline;
+        }
+        
+        .contact-form-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .contact-form-card h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .btn-submit {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-submit:hover {
+            background: #2980b9;
+        }
+        
+        .btn-submit:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        
+        .form-status {
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .form-status.success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            display: block;
+        }
+        
+        .form-status.error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+            display: block;
+        }
+        
+        .faq-section {
+            margin-top: 4rem;
+        }
+        
+        .faq-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .faq-question {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            color: #3498db;
+        }
+        
+        .faq-answer {
+            color: #7f8c8d;
+            line-height: 1.6;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            max-height: 500px;
+        }
+        
+        .faq-toggle {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-toggle {
+            transform: rotate(45deg);
+        }
+        
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info-card, .contact-form-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>AI-Based Online Exam Proctoring System</h1>
+        <p>Secure • Smart • AI-Powered Online Examination Platform</p>
+        <nav>
+            <a href="/"><i class="fas fa-home"></i> Home</a>
+            <a href="/login/"><i class="fas fa-user-graduate"></i> Student Login</a>
+            <a href="admin_login/"><i class="fas fa-user-shield"></i> Admin Login</a>
+            <a href="teacher_registration/"><i class="fas fa-chalkboard-teacher"></i> Teacher Portal</a>
+            <a href="about/"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact/" class="active"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Us</h1>
+            <p>Have questions, feedback, or need support? We're here to help! Reach out to our team through any of the channels below or send us a message directly.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-info-card">
+                <h3>Get in Touch</h3>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Email Support</h4>
+                        <p>
+                            <a href="mailto:support@aiexamproctor.edu">support@aiexamproctor.edu</a><br>
+                            <small>Response time: 24 hours</small>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Phone Support</h4>
+                        <p>
+                            <a href="tel:+15551234567">+1 (555) 123-4567</a><br>
+                            <small>Mon-Fri: 9 AM - 6 PM EST</small>
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Office Address</h4>
+                        <p>
+                            Computer Engineering Department<br>
+                            Tech Innovation Campus<br>
+                            123 Innovation Drive<br>
+                            San Francisco, CA 94107
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Business Hours</h4>
+                        <p>
+                            Monday - Friday: 9:00 AM - 6:00 PM EST<br>
+                            Saturday: 10:00 AM - 4:00 PM EST<br>
+                            Sunday: Closed
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h4>Emergency Technical Support</h4>
+                        <p>
+                            <a href="mailto:emergency@aiexamproctor.edu">emergency@aiexamproctor.edu</a><br>
+                            <small>24/7 for active exam emergencies</small>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-card">
+                <h3>Send us a Message</h3>
+                <div id="formStatus" class="form-status"></div>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <select id="role" name="role" class="form-control">
+                            <option value="">Select your role</option>
+                            <option value="student">Student</option>
+                            <option value="teacher">Teacher</option>
+                            <option value="administrator">Administrator</option>
+                            <option value="parent">Parent</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject *</label>
+                        <input type="text" id="subject" name="subject" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" class="form-control" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" name="newsletter" checked>
+                            Subscribe to our newsletter for updates and tips
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="btn-submit" id="submitBtn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2 style="text-align: center; color: #2c3e50; margin-bottom: 1rem;">Frequently Asked Questions</h2>
+            <p style="text-align: center; color: #7f8c8d; margin-bottom: 2rem;">Find quick answers to common questions</p>
+            
+            <div class="faq-card">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How do I reset my password?
+                        <i class="fas fa-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Visit the login page and click "Forgot Password." Enter your registered email address and follow the instructions sent to your inbox.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What should I do if I experience technical issues during an exam?
+                        <i class="fas fa-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Immediately contact emergency support at <a href="mailto:emergency@aiexamproctor.edu">emergency@aiexamproctor.edu</a> or call our emergency hotline. Take screenshots if possible to help us diagnose the issue.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How long does it take to get a response to my inquiry?
+                        <i class="fas fa-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We aim to respond to all inquiries within 24 hours during business days. Emergency support for active exams is available 24/7.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I schedule a demo of the system?
+                        <i class="fas fa-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Contact us to schedule a personalized demo for your institution. We'll walk you through all features and answer any questions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there mobile app support?
+                        <i class="fas fa-plus faq-toggle"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Currently, we recommend using a desktop or laptop computer with a webcam for the best exam experience. Mobile support is planned for future updates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <p>© 2026 AI Based Online Exam Proctoring System</p>
+        <p>Final Year Diploma Project – Computer Engineering Department</p>
+        <p>
+            <a href="#"><i class="fab fa-github"></i> GitHub</a> | 
+            <a href="#"><i class="fas fa-file-pdf"></i> Documentation</a> | 
+            <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+        </p>
+        <p>Email: support@aiexamproctor.edu | Phone: +1 (555) 123-4567</p>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formStatus = document.getElementById('formStatus');
+            
+            // Disable submit button
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            
+            // Simulate form submission
+            setTimeout(() => {
+                // Show success message
+                formStatus.className = 'form-status success';
+                formStatus.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.';
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                // Re-enable button
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+                
+                // Scroll to show success message
+                formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Hide success message after 10 seconds
+                setTimeout(() => {
+                    formStatus.className = 'form-status';
+                    formStatus.innerHTML = '';
+                }, 10000);
+            }, 1500);
+        });
+        
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                // Close other open items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item && otherItem.classList.contains('active')) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').classList.remove('active');
+                    }
+                });
+                
+                // Toggle current item
+                item.classList.toggle('active');
+                answer.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Project - AI Exam Proctoring System</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+  <h1>AI Exam Proctoring System</h1>
+  <p>Revolutionizing Online Examination Security</p>
+  <nav>
+    <a href="/"><i class="fas fa-home"></i> Home</a>
+    <a href="/login/"><i class="fas fa-user-graduate"></i> Student Login</a>
+    <a href="/admin_login/"><i class="fas fa-user-shield"></i> Admin Login</a>
+    <a href="/about/" class="active"><i class="fas fa-info-circle"></i> About</a>
+    <a href="/contact/"><i class="fas fa-envelope"></i> Contact</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>About AI Exam Proctoring System</h2>
+  
+  <div class="card">
+    <h3>Our Mission</h3>
+    <p>
+      To create a secure, reliable, and intelligent online examination environment that 
+      ensures academic integrity while providing a seamless experience for students, 
+      teachers, and administrators.
+    </p>
+  </div>
+
+  <div class="card">
+    <h3>Project Overview</h3>
+    <p>
+      This innovative system leverages cutting-edge Artificial Intelligence technologies 
+      to detect and prevent cheating during online examinations. By combining multiple 
+      detection methods, we provide comprehensive monitoring that traditional proctoring 
+      systems cannot match.
+    </p>
+    <p>
+      The system uses <strong>face detection and recognition</strong> to verify student identity, 
+      <strong>object detection</strong> to identify prohibited items, and <strong>behavioral analysis</strong> to 
+      monitor suspicious activities during exams.
+    </p>
+  </div>
+
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">👁️</div>
+      <h3>Face Detection</h3>
+      <p>Real-time face tracking and identity verification with 99.2% accuracy</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Object Detection</h3>
+      <p>Detects mobile phones, books, and other prohibited items</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">👥</div>
+      <h3>Multiple Person Detection</h3>
+      <p>Identifies unauthorized individuals in the examination area</p>
+    </div>
+    
+    <div class="feature-card">
+      <div class="feature-icon">👀</div>
+      <h3>Gaze Tracking</h3>
+      <p>Monitors eye movement patterns for suspicious behavior</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Technology Stack</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">Django</div>
+        <div class="stat-label">Backend Framework</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">OpenCV</div>
+        <div class="stat-label">Computer Vision</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">TensorFlow</div>
+        <div class="stat-label">AI Models</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">WebRTC</div>
+        <div class="stat-label">Real-time Communication</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Development Team</h3>
+    <p>
+      This project is developed by Computer Engineering students as part of their 
+      final year diploma project. Our team consists of dedicated developers and 
+      researchers passionate about educational technology and AI applications.
+    </p>
+    <p><strong>Project Duration:</strong> 6 Months (Jan 2026 - Jun 2026)</p>
+    <p><strong>Supervisor:</strong> Dr. Sarah Johnson, Professor of Computer Science</p>
+  </div>
+
+  <div class="home-buttons">
+    <a href="/" class="btn btn-primary">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+    <a href="/contact/" class="btn btn-success">
+      <i class="fas fa-envelope"></i> Contact Us
+    </a>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 AI Based Online Exam Proctoring System</p>
+  <p>Final Year Diploma Project – Computer Engineering Department</p>
+  <p>Email: contact@aiexamproctor.edu | Phone: +1 (555) 123-4567</p>
+</footer>
+
+</body>
+</html>

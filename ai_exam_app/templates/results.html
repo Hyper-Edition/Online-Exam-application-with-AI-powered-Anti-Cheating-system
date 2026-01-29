@@ -1,0 +1,238 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Exam Results - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+  <h1>AI Exam Proctoring System</h1>
+  <p>Examination Results and Analytics</p>
+  <nav>
+    <a href="/student-dashboard/"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="/exam-list/"><i class="fas fa-list-alt"></i> Exams</a>
+    <a href="/results/" class="active"><i class="fas fa-chart-line"></i> Results</a>
+    <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Examination Results</h2>
+  
+  <div class="card">
+    <div class="result-header">
+      <div class="result-badge success">PASSED</div>
+      <h3>Artificial Intelligence - Midterm Examination</h3>
+      <p>Completed on: March 23, 2026 | 10:45 AM</p>
+    </div>
+    
+    <div class="result-summary">
+      <div class="summary-grid">
+        <div class="summary-item">
+          <div class="summary-label">Overall Score</div>
+          <div class="summary-value score-high">78%</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Total Marks</div>
+          <div class="summary-value">78/100</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Grade</div>
+          <div class="summary-value grade-b">B+</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Rank</div>
+          <div class="summary-value">15/120</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Time Taken</div>
+          <div class="summary-value">52:30</div>
+        </div>
+        <div class="summary-item">
+          <div class="summary-label">Proctoring Score</div>
+          <div class="summary-value success">98%</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="result-details">
+      <h4>Detailed Breakdown</h4>
+      <table>
+        <tr>
+          <th>Question</th>
+          <th>Type</th>
+          <th>Marks Obtained</th>
+          <th>Maximum Marks</th>
+          <th>Status</th>
+        </tr>
+        <tr>
+          <td>Q1: Explain AI</td>
+          <td>Descriptive</td>
+          <td>18</td>
+          <td>20</td>
+          <td><span class="success">Excellent</span></td>
+        </tr>
+        <tr>
+          <td>Q2: ML vs DL</td>
+          <td>Descriptive</td>
+          <td>13</td>
+          <td>15</td>
+          <td><span class="success">Good</span></td>
+        </tr>
+        <tr>
+          <td>Q3: MCQ</td>
+          <td>Multiple Choice</td>
+          <td>5</td>
+          <td>5</td>
+          <td><span class="success">Perfect</span></td>
+        </tr>
+        <tr>
+          <td>Q4: True/False</td>
+          <td>True/False</td>
+          <td>2</td>
+          <td>2</td>
+          <td><span class="success">Correct</span></td>
+        </tr>
+        <tr>
+          <td>Q5: Short Answer</td>
+          <td>Short Answer</td>
+          <td>8</td>
+          <td>10</td>
+          <td><span class="warning">Satisfactory</span></td>
+        </tr>
+      </table>
+    </div>
+    
+    <div class="result-analysis">
+      <h4>Performance Analysis</h4>
+      <div class="analysis-grid">
+        <div class="analysis-card">
+          <h5>Strengths</h5>
+          <ul>
+            <li><i class="fas fa-check success"></i> Strong understanding of AI fundamentals</li>
+            <li><i class="fas fa-check success"></i> Excellent in multiple choice questions</li>
+            <li><i class="fas fa-check success"></i> Good time management</li>
+          </ul>
+        </div>
+        <div class="analysis-card">
+          <h5>Areas for Improvement</h5>
+          <ul>
+            <li><i class="fas fa-exclamation-triangle warning"></i> Need more depth in short answers</li>
+            <li><i class="fas fa-exclamation-triangle warning"></i> Could improve technical terminology</li>
+            <li><i class="fas fa-exclamation-triangle warning"></i> Practice more descriptive writing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="proctoring-report">
+      <h4>Proctoring Report</h4>
+      <div class="proctoring-stats">
+        <div class="proctoring-item success">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <h5>Face Detection</h5>
+            <p>98% accuracy maintained throughout exam</p>
+          </div>
+        </div>
+        <div class="proctoring-item success">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <h5>Browser Monitoring</h5>
+            <p>No unauthorized tab switches detected</p>
+          </div>
+        </div>
+        <div class="proctoring-item warning">
+          <i class="fas fa-exclamation-triangle"></i>
+          <div>
+            <h5>Gaze Alert</h5>
+            <p>Minor gaze deviation detected (2 instances)</p>
+          </div>
+        </div>
+        <div class="proctoring-item success">
+          <i class="fas fa-check-circle"></i>
+          <div>
+            <h5>Environment Check</h5>
+            <p>Quiet environment maintained</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="result-actions">
+      <div class="home-buttons">
+        <a href="#" class="btn btn-primary">
+          <i class="fas fa-download"></i> Download Result PDF
+        </a>
+        <a href="#" class="btn btn-success">
+          <i class="fas fa-chart-bar"></i> View Class Statistics
+        </a>
+        <a href="/exam-list/" class="btn btn-primary">
+          <i class="fas fa-redo"></i> Retake Exam (Optional)
+        </a>
+        <a href="/student-dashboard/" class="btn btn-warning">
+          <i class="fas fa-arrow-left"></i> Back to Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Previous Results</h3>
+    <table>
+      <tr>
+        <th>Exam</th>
+        <th>Date</th>
+        <th>Score</th>
+        <th>Grade</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>Database Systems</td>
+        <td>Mar 18, 2026</td>
+        <td>85%</td>
+        <td>A</td>
+        <td><span class="success">Passed</span></td>
+        <td><a href="#" class="btn btn-sm">View</a></td>
+      </tr>
+      <tr>
+        <td>Computer Networks</td>
+        <td>Mar 10, 2026</td>
+        <td>72%</td>
+        <td>B</td>
+        <td><span class="success">Passed</span></td>
+        <td><a href="#" class="btn btn-sm">View</a></td>
+      </tr>
+      <tr>
+        <td>Data Structures</td>
+        <td>Feb 28, 2026</td>
+        <td>91%</td>
+        <td>A+</td>
+        <td><span class="success">Passed</span></td>
+        <td><a href="#" class="btn btn-sm">View</a></td>
+      </tr>
+      <tr>
+        <td>Operating Systems</td>
+        <td>Feb 15, 2026</td>
+        <td>68%</td>
+        <td>C+</td>
+        <td><span class="success">Passed</span></td>
+        <td><a href="#" class="btn btn-sm">View</a></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 AI Based Online Exam Proctoring System</p>
+  <p>Results generated on: March 23, 2026 at 11:30 AM</p>
+  <p>For result discrepancies, contact: results@aiexamproctor.edu</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Based Online Exam Proctoring System</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>AI-Based Online Exam Proctoring System</h1>
+        <p>Secure • Smart • AI-Powered Online Examination Platform</p>
+        <nav>
+            <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="login/"><i class="fas fa-user-graduate"></i> Student Login</a>
+            <a href="admin_login/"><i class="fas fa-user-shield"></i> Admin Login</a>
+            <a href="teacher_registration/"><i class="fas fa-chalkboard-teacher"></i> Teacher Portal</a>
+            <a href="about/"><i class="fas fa-info-circle"></i> About</a>
+            <a href="contact/"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card hero-card">
+            <h2>Welcome to the Future of Online Examinations</h2>
+            <p>
+                This project presents an <b>AI-powered online examination system</b>
+                designed to prevent cheating during remote exams. The system uses
+                computer vision and behavioral analysis techniques to monitor candidates
+                in real time and ensure examination integrity.
+            </p>
+            <p>
+                The platform supports three roles: <b>Student</b>, <b>Teacher</b>,
+                and <b>Administrator</b>, each with dedicated functionalities and dashboards.
+            </p>
+            <div class="home-buttons">
+                <a href="login/" class="btn btn-large btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> Student Login
+                </a>
+                <a href="admin_login/" class="btn btn-large btn-primary">
+                    <i class="fas fa-shield-alt"></i> Admin Login
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>New User Registration</h2>
+        <div class="features-grid">
+            <div class="card">
+                <div class="feature-icon">👨‍🎓</div>
+                <h3>Student Registration</h3>
+                <p>
+                    Students can create an account to participate in online examinations.
+                    After registration, students can log in, view available exams,
+                    attend exams securely, and view results.
+                </p>
+                <div class="registration-stats">
+                    <p><i class="fas fa-users"></i> <strong>1,247+ Students</strong> already registered</p>
+                </div>
+                <a class="btn btn-success" href="student_registration/">
+                    <i class="fas fa-user-plus"></i> Register as Student
+                </a>
+            </div>
+
+            <div class="card">
+                <div class="feature-icon">👩‍🏫</div>
+                <h3>Teacher Registration</h3>
+                <p>
+                    Teachers can register to create and manage examinations,
+                    monitor students during live exams, and review AI-generated
+                    cheating alerts and reports.
+                </p>
+                <div class="registration-stats">
+                    <p><i class="fas fa-chalkboard-teacher"></i> <strong>68+ Teachers</strong> using our platform</p>
+                </div>
+                <a class="btn btn-success" href="teacher_registration/">
+                    <i class="fas fa-user-plus"></i> Register as Teacher
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>System Features</h2>
+        <div class="card">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h4>AI Face Detection</h4>
+                    <p>Real-time face tracking and presence monitoring with 99.2% accuracy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h4>Multiple Person Detection</h4>
+                    <p>Identifies unauthorized individuals in examination area instantly</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h4>Object Detection</h4>
+                    <p>Detects mobile phones, books, and prohibited objects automatically</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👀</div>
+                    <h4>Gaze & Behavior Analysis</h4>
+                    <p>Monitors eye movement and suspicious behavior patterns</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h4>Browser Monitoring</h4>
+                    <p>Tracks tab switching, copy-paste, and unauthorized activities</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h4>Real-time Dashboard</h4>
+                    <p>Live monitoring dashboard for teachers with instant alerts</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h4>Detailed Analytics</h4>
+                    <p>Comprehensive reports with confidence scores and evidence</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h4>Secure & Scalable</h4>
+                    <p>Role-based access control suitable for institutional use</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Why Choose Our System?</h2>
+        <div class="card">
+            <div class="comparison" style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
+                <div class="comparison-item">
+                    <h4>Traditional Systems</h4>
+                    <ul class="disadvantages" style="list-style: none; padding: 0;">
+                        <li><i class="fas fa-times error"></i> Limited cheating detection</li>
+                        <li><i class="fas fa-times error"></i> High false positive rates</li>
+                        <li><i class="fas fa-times error"></i> Manual monitoring required</li>
+                        <li><i class="fas fa-times error"></i> No behavioral analysis</li>
+                        <li><i class="fas fa-times error"></i> Poor scalability</li>
+                    </ul>
+                </div>
+                <div class="comparison-item">
+                    <h4>Our AI System</h4>
+                    <ul class="advantages" style="list-style: none; padding: 0;">
+                        <li><i class="fas fa-check success"></i> Multi-modal AI detection</li>
+                        <li><i class="fas fa-check success"></i> 92%+ accuracy rate</li>
+                        <li><i class="fas fa-check success"></i> Fully automated monitoring</li>
+                        <li><i class="fas fa-check success"></i> Advanced behavioral analysis</li>
+                        <li><i class="fas fa-check success"></i> Enterprise scalability</li>
+                    </ul>
+                </div>
+            </div>
+            <p>
+                Traditional online examination systems often fail to prevent cheating
+                effectively due to the lack of intelligent monitoring mechanisms.
+                This project addresses these limitations by introducing a
+                <b>multi-modal AI proctoring approach</b>, significantly improving
+                accuracy and reducing false positives.
+            </p>
+            <p>
+                The system is suitable for high-stakes examinations and can be
+                extended with advanced AI models in the future.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>System Statistics</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">1,247</div>
+                <div class="stat-label">Active Students</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">68</div>
+                <div class="stat-label">Registered Teachers</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">156</div>
+                <div class="stat-label">Exams Conducted</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">98.7%</div>
+                <div class="stat-label">System Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">92%</div>
+                <div class="stat-label">Detection Accuracy</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">24</div>
+                <div class="stat-label">Active Exams Now</div>
+            </div>
+        </div>
+    </div>
+
+    <footer id="contact">
+        <p>© 2026 AI Based Online Exam Proctoring System</p>
+        <p>Final Year Diploma Project – Computer Engineering Department</p>
+        <p>
+            <a href="#"><i class="fab fa-github"></i> GitHub</a> | 
+            <a href="#"><i class="fas fa-file-pdf"></i> Documentation</a> | 
+            <a href="#"><i class="fas fa-question-circle"></i> Help Center</a>
+        </p>
+        <p>Email: support@aiexamproctor.edu | Phone: +1 (555) 123-4567</p>
+    </footer>
+</body>
+</html>

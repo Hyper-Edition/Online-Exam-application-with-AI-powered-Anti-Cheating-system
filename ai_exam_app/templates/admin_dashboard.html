@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard - AI Exam Proctoring</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <h1><i class="fas fa-shield-alt"></i> Admin Panel</h1>
+        <p class="text-muted">System Administrator</p>
+    </div>
+    
+    <nav class="nav-links">
+        <a class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+        <a><i class="fas fa-users"></i> Students</a>
+        <a><i class="fas fa-chalkboard-teacher"></i> Teachers</a>
+        <a><i class="fas fa-file-alt"></i> Exams</a>
+        <a><i class="fas fa-chart-bar"></i> Analytics</a>
+        <a><i class="fas fa-bell"></i> Notifications</a>
+        <a><i class="fas fa-cog"></i> Settings</a>
+        <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </nav>
+    
+    <div class="sidebar-footer">
+        <p><strong>System Status:</strong> <span class="success">● Online</span></p>
+        <p>Last Updated: Today, 10:30 AM</p>
+    </div>
+</aside>
+
+<main class="main-content">
+    <div class="content-header">
+        <h2><i class="fas fa-tachometer-alt"></i> Admin Dashboard</h2>
+        <p>Welcome back, Admin! Here's your system overview.</p>
+    </div>
+
+    <div class="cards">
+        <div class="dashboard-card">
+            <div class="icon">👨‍🎓</div>
+            <h3>Total Students</h3>
+            <p>1,247</p>
+            <p class="text-muted">+12 this week</p>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="icon">👩‍🏫</div>
+            <h3>Teachers</h3>
+            <p>68</p>
+            <p class="text-muted">+3 this month</p>
+        </div>
+
+        <div class="dashboard-card">
+            <div class="icon">📚</div>
+            <h3>Active Exams</h3>
+            <p>24</p>
+            <p class="text-muted">8 in progress</p>
+        </div>
+        
+        <div class="dashboard-card">
+            <div class="icon">⚠️</div>
+            <h3>Violations</h3>
+            <p>18</p>
+            <p class="text-muted">Today's count</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>System Statistics</h3>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value">98.7%</div>
+                <div class="stat-label">System Uptime</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">2.4s</div>
+                <div class="stat-label">Avg Response Time</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">156</div>
+                <div class="stat-label">Total Exams This Month</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value">92%</div>
+                <div class="stat-label">Detection Accuracy</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <h3>Recent Activities</h3>
+        <table>
+            <tr>
+                <th>Time</th>
+                <th>Activity</th>
+                <th>User</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>10:25 AM</td>
+                <td>New student registration approved</td>
+                <td>John Doe</td>
+                <td><span class="success">Completed</span></td>
+            </tr>
+            <tr>
+                <td>09:45 AM</td>
+                <td>System backup performed</td>
+                <td>System</td>
+                <td><span class="success">Completed</span></td>
+            </tr>
+            <tr>
+                <td>09:15 AM</td>
+                <td>Exam schedule updated</td>
+                <td>Dr. Smith</td>
+                <td><span class="success">Completed</span></td>
+            </tr>
+            <tr>
+                <td>08:30 AM</td>
+                <td>High cheating alert - Review required</td>
+                <td>Student ID: S20260045</td>
+                <td><span class="warning">Pending</span></td>
+            </tr>
+            <tr>
+                <td>Yesterday</td>
+                <td>Database optimization completed</td>
+                <td>System</td>
+                <td><span class="success">Completed</span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Quick Actions</h3>
+        <div class="home-buttons">
+            <a href="#" class="btn btn-primary">
+                <i class="fas fa-user-plus"></i> Add New User
+            </a>
+            <a href="#" class="btn btn-success">
+                <i class="fas fa-file-export"></i> Generate Reports
+            </a>
+            <a href="#" class="btn btn-warning">
+                <i class="fas fa-cog"></i> System Settings
+            </a>
+            <a href="/cheating-report/" class="btn btn-primary">
+                <i class="fas fa-exclamation-triangle"></i> View Violations
+            </a>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>

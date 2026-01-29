@@ -1,0 +1,221 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Dashboard - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dashboard-layout">
+
+<aside class="sidebar">
+  <div class="teacher-profile">
+    <div class="profile-avatar">
+      <i class="fas fa-chalkboard-teacher fa-3x"></i>
+    </div>
+    <div class="profile-info">
+      <h3>Dr. Sarah Johnson</h3>
+      <p class="text-muted">Professor - AI Department</p>
+      <p class="teacher-id">T2026008</p>
+    </div>
+  </div>
+  
+  <nav class="nav-links">
+    <a class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+    <a href="/create_exam/"><i class="fas fa-plus-circle"></i> Create Exam</a>
+    <a href="/monitor/"><i class="fas fa-desktop"></i> Live Monitor</a>
+    <a href="/cheating_report/"><i class="fas fa-exclamation-triangle"></i> Violations</a>
+    <a href="#"><i class="fas fa-users"></i> Students</a>
+    <a href="#"><i class="fas fa-chart-bar"></i> Analytics</a>
+    <a href="#"><i class="fas fa-cog"></i> Settings</a>
+    <a href="/"><i class="fas fa-sign-out-alt"></i> Logout</a>
+  </nav>
+  
+  <div class="sidebar-footer">
+    <div class="teacher-stats">
+      <p><strong>Active Exams:</strong> 3</p>
+      <p><strong>Total Students:</strong> 120</p>
+      <p><strong>Today's Alerts:</strong> 2</p>
+    </div>
+  </div>
+</aside>
+
+<main class="main-content">
+  <div class="content-header">
+    <h2><i class="fas fa-tachometer-alt"></i> Teacher Dashboard</h2>
+    <p>Welcome, Dr. Johnson! Manage your examinations and monitor students.</p>
+  </div>
+
+  <div class="cards">
+    <div class="dashboard-card">
+      <div class="icon">📚</div>
+      <h3>My Exams</h3>
+      <p>8</p>
+      <p class="text-muted">3 active now</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">👨‍🎓</div>
+      <h3>Students</h3>
+      <p>120</p>
+      <p class="text-muted">In my courses</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">⚠️</div>
+      <h3>Today's Alerts</h3>
+      <p>2</p>
+      <p class="text-muted">Require attention</p>
+    </div>
+
+    <div class="dashboard-card">
+      <div class="icon">📊</div>
+      <h3>Avg. Score</h3>
+      <p>78%</p>
+      <p class="text-muted">Current semester</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Active Examinations</h3>
+    <div class="active-exams">
+      <div class="exam-item">
+        <div class="exam-header">
+          <h4>Artificial Intelligence - Midterm</h4>
+          <span class="exam-status ongoing">In Progress</span>
+        </div>
+        <div class="exam-details">
+          <p><i class="fas fa-clock"></i> <strong>Time:</strong> 10:00 AM - 11:00 AM</p>
+          <p><i class="fas fa-users"></i> <strong>Students:</strong> 45 attending</p>
+          <p><i class="fas fa-exclamation-triangle"></i> <strong>Alerts:</strong> 2 violations detected</p>
+        </div>
+        <div class="exam-actions">
+          <a href="/monitor/" class="btn btn-primary">
+            <i class="fas fa-eye"></i> Monitor Live
+          </a>
+          <a href="#" class="btn btn-success">
+            <i class="fas fa-chart-bar"></i> View Stats
+          </a>
+        </div>
+      </div>
+      
+      <div class="exam-item">
+        <div class="exam-header">
+          <h4>Data Structures - Quiz 1</h4>
+          <span class="exam-status upcoming">Starts in 2 hrs</span>
+        </div>
+        <div class="exam-details">
+          <p><i class="fas fa-clock"></i> <strong>Time:</strong> 2:00 PM - 3:30 PM</p>
+          <p><i class="fas fa-users"></i> <strong>Students:</strong> 68 registered</p>
+          <p><i class="fas fa-check-circle"></i> <strong>Status:</strong> Ready to start</p>
+        </div>
+        <div class="exam-actions">
+          <a href="#" class="btn btn-primary">
+            <i class="fas fa-cog"></i> Configure
+          </a>
+          <a href="#" class="btn btn-warning">
+            <i class="fas fa-bell"></i> Notify Students
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Recent Violation Alerts</h3>
+    <table>
+      <tr>
+        <th>Student</th>
+        <th>Exam</th>
+        <th>Violation</th>
+        <th>Time</th>
+        <th>Confidence</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>Emma Johnson</td>
+        <td>AI Midterm</td>
+        <td>Multiple Faces Detected</td>
+        <td>10:25 AM</td>
+        <td><span class="error">92%</span></td>
+        <td>
+          <button class="btn btn-sm btn-warning">Warn</button>
+          <button class="btn btn-sm btn-primary">Review</button>
+        </td>
+      </tr>
+      <tr>
+        <td>Michael Brown</td>
+        <td>AI Midterm</td>
+        <td>Face Not Detected</td>
+        <td>10:15 AM</td>
+        <td><span class="error">95%</span></td>
+        <td>
+          <button class="btn btn-sm btn-error">Disqualify</button>
+          <button class="btn btn-sm btn-primary">Investigate</button>
+        </td>
+      </tr>
+      <tr>
+        <td>John Smith</td>
+        <td>Database Systems</td>
+        <td>Browser Tab Switch</td>
+        <td>Yesterday</td>
+        <td><span class="warning">85%</span></td>
+        <td>
+          <button class="btn btn-sm btn-success">Resolved</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Quick Statistics</h3>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-value">45</div>
+        <div class="stat-label">Active Now</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">92%</div>
+        <div class="stat-label">Attendance Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">78%</div>
+        <div class="stat-label">Avg. Score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">8%</div>
+        <div class="stat-label">Violation Rate</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">98.5%</div>
+        <div class="stat-label">System Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">2.1s</div>
+        <div class="stat-label">Avg. Response Time</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Quick Actions</h3>
+    <div class="home-buttons">
+      <a href="/create_exam/" class="btn btn-success">
+        <i class="fas fa-plus-circle"></i> Create New Exam
+      </a>
+      <a href="/monitor/" class="btn btn-primary">
+        <i class="fas fa-desktop"></i> Live Monitoring
+      </a>
+      <a href="/cheating_report/" class="btn btn-warning">
+        <i class="fas fa-exclamation-triangle"></i> View Violations
+      </a>
+      <a href="#" class="btn btn-primary">
+        <i class="fas fa-file-export"></i> Export Reports
+      </a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}AI Exam Proctoring System{% endblock %}</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+            <button type="button" class="close" onclick="this.parentElement.style.display='none'">&times;</button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% block content %}{% endblock %}
+    
+    <!-- JavaScript -->
+    <script src="{% static 'js/main.js' %}"></script>
+    <script>
+        // CSRF token for AJAX requests
+        const csrfToken = '{{ csrf_token }}';
+    </script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

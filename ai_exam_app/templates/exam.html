@@ -1,0 +1,183 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Examination - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="timer" id="examTimer">
+  <i class="fas fa-clock"></i> Time Remaining: <span id="time">59:45</span>
+</div>
+
+<div class="container">
+  <div class="exam-header">
+    <h2>Live Examination</h2>
+    <div class="exam-info">
+      <p><strong>Subject:</strong> Artificial Intelligence</p>
+      <p><strong>Exam Code:</strong> AI2026-MID</p>
+      <p><strong>Duration:</strong> 60 Minutes</p>
+      <p><strong>Student:</strong> John Doe (S20260045)</p>
+    </div>
+    <div class="proctoring-status">
+      <p><i class="fas fa-video"></i> Proctoring: <span class="success">Active</span></p>
+      <p><i class="fas fa-shield-alt"></i> AI Monitoring: <span class="success">Enabled</span></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="exam-instructions">
+      <h3><i class="fas fa-info-circle"></i> Important Instructions</h3>
+      <ul>
+        <li>Keep your face clearly visible to the camera throughout the exam</li>
+        <li>Do not use mobile phones, books, or any reference materials</li>
+        <li>No other person should be visible in the camera frame</li>
+        <li>Do not switch browser tabs or applications</li>
+        <li>Violations may result in exam disqualification</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question-number">Question 1 of 5</div>
+    <h3>Explain Artificial Intelligence</h3>
+    <p class="question-text">
+      Define Artificial Intelligence in your own words. Discuss its key characteristics, 
+      major branches, and provide at least three real-world applications where AI is 
+      transforming industries today.
+    </p>
+    <p><strong>Marks:</strong> 20 | <strong>Word Limit:</strong> 300-500 words</p>
+    <textarea rows="8" placeholder="Type your answer here..."></textarea>
+    <div class="word-count">Word Count: <span id="wordCount1">0</span></div>
+  </div>
+
+  <div class="card">
+    <div class="question-number">Question 2 of 5</div>
+    <h3>Machine Learning vs Deep Learning</h3>
+    <p class="question-text">
+      Compare and contrast Machine Learning and Deep Learning. Include differences in:
+      data requirements, model complexity, computational needs, and typical use cases.
+    </p>
+    <p><strong>Marks:</strong> 15 | <strong>Word Limit:</strong> 200-300 words</p>
+    <textarea rows="6" placeholder="Type your answer here..."></textarea>
+    <div class="word-count">Word Count: <span id="wordCount2">0</span></div>
+  </div>
+
+  <div class="card">
+    <div class="question-number">Question 3 of 5</div>
+    <h3>Multiple Choice Question</h3>
+    <p class="question-text">
+      Which of the following is NOT a type of machine learning?
+    </p>
+    <div class="options">
+      <label class="option">
+        <input type="radio" name="q3" value="a">
+        Supervised Learning
+      </label>
+      <label class="option">
+        <input type="radio" name="q3" value="b">
+        Unsupervised Learning
+      </label>
+      <label class="option">
+        <input type="radio" name="q3" value="c">
+        Reinforcement Learning
+      </label>
+      <label class="option">
+        <input type="radio" name="q3" value="d">
+        Deterministic Learning
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question-number">Question 4 of 5</div>
+    <h3>True or False</h3>
+    <p class="question-text">Neural Networks are inspired by the human brain.</p>
+    <div class="options">
+      <label class="option">
+        <input type="radio" name="q4" value="true"> True
+      </label>
+      <label class="option">
+        <input type="radio" name="q4" value="false"> False
+      </label>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="question-number">Question 5 of 5</div>
+    <h3>Short Answer</h3>
+    <p class="question-text">
+      What is the role of activation functions in neural networks?
+    </p>
+    <textarea rows="4" placeholder="Type your answer here..."></textarea>
+    <div class="word-count">Word Count: <span id="wordCount5">0</span></div>
+  </div>
+
+  <div class="exam-actions">
+    <div class="home-buttons">
+      <a href="#" class="btn btn-warning">
+        <i class="fas fa-save"></i> Save & Continue Later
+      </a>
+      <a href="/results/" class="btn btn-success">
+        <i class="fas fa-paper-plane"></i> Submit Exam
+      </a>
+      <a href="/exam-list/" class="btn btn-primary">
+        <i class="fas fa-times"></i> Cancel Exam
+      </a>
+    </div>
+  </div>
+
+  <div class="warning-card card">
+    <h4><i class="fas fa-exclamation-triangle"></i> Proctoring Warnings</h4>
+    <div id="warnings">
+      <p class="success"><i class="fas fa-check-circle"></i> Face detection: Active</p>
+      <p class="success"><i class="fas fa-check-circle"></i> Browser focus: Normal</p>
+      <p class="warning"><i class="fas fa-exclamation-circle"></i> Warning: Please center your face in frame</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Timer functionality
+  let timeLeft = 60 * 60; // 60 minutes in seconds
+  const timerElement = document.getElementById('time');
+  
+  function updateTimer() {
+    const minutes = Math.floor(timeLeft / 60);
+    const seconds = timeLeft % 60;
+    timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+    if (timeLeft <= 0) {
+      clearInterval(timerInterval);
+      alert('Time is up! Exam will be submitted automatically.');
+      window.location.href = 'results.html';
+    } else if (timeLeft <= 300) { // 5 minutes warning
+      document.getElementById('examTimer').style.background = 'var(--warning-gradient)';
+    }
+    
+    timeLeft--;
+  }
+  
+  const timerInterval = setInterval(updateTimer, 1000);
+  
+  // Word count functionality
+  function updateWordCount(textareaId, countId) {
+    const textarea = document.querySelector(textareaId);
+    const countElement = document.getElementById(countId);
+    
+    textarea.addEventListener('input', function() {
+      const words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+      countElement.textContent = words.length;
+    });
+  }
+  
+  updateWordCount('textarea:nth-of-type(1)', 'wordCount1');
+  updateWordCount('textarea:nth-of-type(2)', 'wordCount2');
+  updateWordCount('textarea:nth-of-type(3)', 'wordCount5');
+</script>
+
+</body>
+</html>

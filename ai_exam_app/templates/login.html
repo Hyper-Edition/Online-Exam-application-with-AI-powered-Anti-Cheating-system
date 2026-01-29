@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Login - AI Proctoring</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+<div class="login-box">
+  <div class="card form-container">
+    <div class="login-header">
+      <i class="fas fa-user-graduate" style="font-size: 3rem; color: #667eea; margin-bottom: 15px;"></i>
+      <h2>Login</h2>
+      <p class="text-muted">Access your examination portal</p>
+    </div>
+
+    <form action="/student_dashboard/">
+      <div class="input-group floating-label">
+        <input type="text" required>
+        <label><i class="fas fa-user"></i> Username or Student ID</label>
+      </div>
+
+      <div class="input-group floating-label">
+        <input type="password" required>
+        <label><i class="fas fa-lock"></i> Password</label>
+      </div>
+
+      <div class="form-options">
+        <label class="checkbox">
+          <input type="checkbox"> Remember me
+        </label>
+        <a href="#" class="forgot-link">Forgot Password?</a>
+      </div>
+
+      <button class="btn btn-primary btn-block">
+        <i class="fas fa-sign-in-alt"></i> Login to  Portal
+      </button>
+    </form>
+
+    <div class="login-footer">
+      <div class="divider">
+        <span>or continue with</span>
+      </div>
+      
+
+
+      <div class="footer-text mt-3">
+        <p>New to platform? <a href="/student_registration/">Create an account</a></p>
+        <p>Are you a teacher? <a href="/teacher_registration/">Teacher login here</a></p>
+        <p><a href="/"><i class="fas fa-arrow-left"></i> Back to Home</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="login-info">
+  <div class="info-card">
+    <h3><i class="fas fa-shield-alt"></i> Secure Login</h3>
+    <p>Your credentials are protected with 256-bit SSL encryption</p>
+  </div>
+  <div class="info-card">
+    <h3><i class="fas fa-bell"></i> Important Notice</h3>
+    <p>Ensure you have a working webcam and microphone for examinations</p>
+  </div>
+</div>
+
+</body>
+</html>
