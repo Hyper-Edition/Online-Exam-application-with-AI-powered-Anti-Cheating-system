@@ -6,18 +6,25 @@
   <title>Teacher Dashboard - AI Proctoring</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    h3 {
+      color: aliceblue;
+    }
+  </style>
 </head>
 <body class="dashboard-layout">
 
 <aside class="sidebar">
   <div class="teacher-profile">
     <div class="profile-avatar">
-      <i class="fas fa-chalkboard-teacher fa-3x"></i>
+      <a href="{% url 'teacher_profile' %}">
+        <i class="fas fa-chalkboard-teacher fa-3x"></i>
+      </a>
     </div>
     <div class="profile-info">
-      <h3>Dr. Sarah Johnson</h3>
-      <p class="text-muted">Professor - AI Department</p>
-      <p class="teacher-id">T2026008</p>
+      <h3>{{ teacher.full_name }}</h3>
+      <p class="text-muted">{{ teacher.department }}</p>
+      <p class="teacher-id">{{ teacher.employee_id }}</p>
     </div>
   </div>
   
@@ -44,7 +51,7 @@
 <main class="main-content">
   <div class="content-header">
     <h2><i class="fas fa-tachometer-alt"></i> Teacher Dashboard</h2>
-    <p>Welcome, Dr. Johnson! Manage your examinations and monitor students.</p>
+    <p>Welcome, {{ teacher.full_name }}! Manage your examinations and monitor students.</p>
   </div>
 
   <div class="cards">

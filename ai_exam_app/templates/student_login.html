@@ -13,18 +13,19 @@
   <div class="card form-container">
     <div class="login-header">
       <i class="fas fa-user-graduate" style="font-size: 3rem; color: #667eea; margin-bottom: 15px;"></i>
-      <h2>Login</h2>
+      <h2>Student Login</h2>
       <p class="text-muted">Access your examination portal</p>
     </div>
 
-    <form action="/student_dashboard/">
+    <form method="POST">
+      {% csrf_token %}
       <div class="input-group floating-label">
-        <input type="text" required>
+        <input type="text" name="username" required>
         <label><i class="fas fa-user"></i> Username or Student ID</label>
       </div>
 
       <div class="input-group floating-label">
-        <input type="password" required>
+        <input type="password" name="password" required>
         <label><i class="fas fa-lock"></i> Password</label>
       </div>
 
@@ -35,8 +36,8 @@
         <a href="#" class="forgot-link">Forgot Password?</a>
       </div>
 
-      <button class="btn btn-primary btn-block">
-        <i class="fas fa-sign-in-alt"></i> Login to  Portal
+      <button type="submit" class="btn btn-primary btn-block">
+        <i class="fas fa-sign-in-alt"></i> Login to Student Portal
       </button>
     </form>
 

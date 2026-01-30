@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teacher Profile</title>
+    <style>
+        .profile-card {
+            width: 400px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+        .profile-card h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .profile-item {
+            margin-bottom: 10px;
+        }
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="profile-card">
+    <h2>Teacher Profile</h2>
+
+    <div class="profile-item">
+        <span class="label">Full Name:</span>
+        {{ teacher.full_name|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Employee ID:</span>
+        {{ teacher.employee_id|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Username:</span>
+        {{ teacher.username|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Age:</span>
+        {{ teacher.age|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Department:</span>
+        {{ teacher.department|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Phone:</span>
+        {{ teacher.phone_no|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Email:</span>
+        {{ teacher.email|default:"N/A" }}
+    </div>
+
+    <div class="profile-item">
+        <span class="label">Address:</span>
+        {{ teacher.address|default:"N/A" }}
+    </div>
+</div>
+
+</body>
+</html>
